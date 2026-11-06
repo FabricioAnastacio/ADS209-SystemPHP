@@ -20,6 +20,8 @@ class ConteudoController extends BaseController
 
     public function contato(): string
     {
-        return view('contato');
+        $conteudoModel = new ConteudoModel();
+        $dados['Conteudo'] = $conteudoModel->find(2);
+        return view('contato', $dados);
     }
 }
