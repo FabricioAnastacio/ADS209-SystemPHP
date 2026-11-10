@@ -6,3 +6,8 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 $routes->get('/home', 'ConteudoController::index');
 $routes->get('/contato', 'ConteudoController::contato');
+
+// Listagem, formulário de edição e atualização
+$routes->get('conteudos', 'ConteudoController::listar');
+$routes->get('conteudos/editar/(:num)', 'ConteudoController::editar/$1');
+$routes->post('conteudos/atualizar/(:num)', 'ConteudoController::atualizar/$1');
