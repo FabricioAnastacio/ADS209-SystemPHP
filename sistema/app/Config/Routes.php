@@ -10,4 +10,13 @@ $routes->get('/contato', 'ConteudoController::contato');
 // Listagem, formulário de edição e atualização
 $routes->get('conteudos', 'ConteudoController::listar');
 $routes->get('conteudos/editar/(:num)', 'ConteudoController::editar/$1');
+
+service('auth')->routes($routes);
 $routes->post('conteudos/atualizar/(:num)', 'ConteudoController::atualizar/$1');
+
+$routes->get('sobre', 'Site::sobre');
+
+$routes->group('admin', ['filter' => 'session'], static function ($routes) {
+    $routes->get('/', 'Admin::index');
+    $routes->get('usuarios', 'Admin\Usuarios::index');
+});
