@@ -24,6 +24,12 @@ $routes->group('', ['filter' => 'session'], static function ($routes) {
     $routes->post('conteudos/atualizar/(:num)', 'ConteudoController::atualizar/$1');
 });
 
+// Painel: exige login e grupo admin
 $routes->get('admin', 'Admin\Painel::index', [
     'filter' => ['session', 'group:admin'],
+]);
+
+// Logout: aceita apenas usuários autenticados
+$routes->post('admin/sair', 'Admin\Painel::logout', [
+    'filter' => 'session',
 ]);
