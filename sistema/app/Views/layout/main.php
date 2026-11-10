@@ -9,7 +9,30 @@
     </head>
     <body>
         <header>
+            <div class="Title-inicial">
+                <div class="secao">
+                    <p>
+                        terça-feira
+                        10 novembro 2026
+                        jornal
+                    </p>
+                </div>
+                <div>
+                    <h1 class="jornal-titulo">
+                        Jornal Brasil
+                    </h1>
+                </div>
+                <div class="secao end-secao">
+                    <p>
+                        Brasil
+                    </p>
+                </div>
+            </div>
             <?= $this->include('layout/menu') ?>
+            <div class="sub-header">
+                <p>Jornal Brasil</p>
+                <p>20/11/2026</p>
+            </div>
         </header>
         <main class="container">
             <!-- Aqui é injetado o conteúdo de cada página -->
