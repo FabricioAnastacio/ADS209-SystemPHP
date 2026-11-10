@@ -1,19 +1,28 @@
 <?php
 
-namespace App\Controllers;
+// namespace App\Controllers;
 
-class Usuarios extends BaseController
-{
-    public function create(): string
-    {
-        $user = auth()->user();
+// class Usuarios extends BaseController
+// {
+//     public function create(): string
+//     {
+//         $user = auth()->user();
 
-        if ($user === null || ! $user->can('users.create')) {
-            return redirect()->back()->with('error', 'Acesso não autorizado.');
-        }
+//         if ($user === null || ! $user->can('users.create')) {
+//             return redirect()->back()->with('error', 'Acesso não autorizado.');
+//         }
 
-        if ($user !== null && $user->inGroup('admin')) {
-            // Executar a operação permitida para administradores.
-        }
-    }
-}
+//         if ($user !== null && $user->inGroup('admin')) {
+//             // Executar a operação permitida para administradores.
+//         }
+//     }
+//     public function store()
+//     {
+//         $user = auth()->user();
+
+//         if ($user === null || ! $user->can('users.create')) {
+//             return redirect()->back()->with('error', 'Acesso não autorizado.');
+//         }
+//         // Validar os dados e executar o cadastro
+//     }
+// }
